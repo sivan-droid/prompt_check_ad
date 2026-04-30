@@ -1,4 +1,21 @@
-name: incomplete-agent
+name: secret-agent
+version: 1.0.0
+description: Agent with hardcoded credentials
+
+runtime: python
 
 docker:
-  working_dir: /app
+  image: python:3.10
+
+dependencies:
+  - requests
+
+env:
+  AWS_ACCESS_KEY: "AKIA1234567890EXAMPLE"
+  AWS_SECRET_KEY: "mysecretkey123"
+  DB_PASSWORD: "rootpassword"
+  API_KEY: "12345-SECRET-KEY"
+
+permissions:
+  network: true
+  filesystem: read-write
