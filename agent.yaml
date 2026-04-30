@@ -1,6 +1,6 @@
-name: risky-agent
+name: dangerous-agent
 version: 1.0.0
-description: Agent with multiple security issues
+description: Agent with multiple critical risks
 
 runtime: python
 
@@ -8,14 +8,16 @@ docker:
   image: python:3.7  
 
 dependencies:
-  - django==1.2      
-  - requests==2.19.0  
+  - django==1.2 
+  - requests==2.19.0   
 
 env:
   AWS_ACCESS_KEY: "AKIA1234567890EXAMPLE"   
   AWS_SECRET_KEY: "mysecretkey123"          
-  DB_PASSWORD: "rootpassword"              
+  DB_PASSWORD: "rootpassword"             
+  API_KEY: "12345-SECRET-KEY"              
 
 permissions:
-  network: true
-  filesystem: read-write
+  network: true             
+  filesystem: read-write    
+  privileged: true          
