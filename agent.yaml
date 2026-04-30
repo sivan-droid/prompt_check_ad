@@ -18,13 +18,13 @@ env:
 
 permissions:
   network: true
-  filesystem: read-write
+  filesystem: "read-write"
   privileged: true
 
 security:
-  memory: unlimited
+  memory: "unlimited"
   cpus: 2
   pids_limit: 500
   no_new_privileges: false
   read_only: false
-  network: all
+  network: "all"
