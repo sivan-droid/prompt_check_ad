@@ -8,23 +8,23 @@ docker:
   image: python:3.7
 
 dependencies:
-  - django==1.2       
-  - requests==2.19.0   
+  - django==1.2
+  - requests==2.19.0
 
 env:
-  AWS_ACCESS_KEY: "AKIA1234567890EXAMPLE"  
-  AWS_SECRET_KEY: "mysecretkey123"         
-  DB_PASSWORD: "rootpassword"            
+  AWS_ACCESS_KEY: "AKIA1234567890EXAMPLE"
+  AWS_SECRET_KEY: "mysecretkey123"
+  DB_PASSWORD: "rootpassword"
 
 permissions:
-  network: true            
-  filesystem: read-write   
-  privileged: true        
+  network: true
+  filesystem: read-write
+  privileged: true
 
 security:
-  memory: unlimited              # --memory=256m
-  cpus: 2                        # --cpus=0.5
-  pids_limit: 500                # --pids-limit=50
-  no_new_privileges: false       # --security-opt no-new-privileges
-  read_only: true
-  network: false                  
+  memory: unlimited
+  cpus: 2
+  pids_limit: 500
+  no_new_privileges: false
+  read_only: false
+  network: all
