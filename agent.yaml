@@ -1,23 +1,34 @@
-name: dangerous-agent
+name: safe-agent
 version: 1.0.0
-description: Agent with multiple critical risks
+description: Simple safe agent for execution testing
 
 runtime: python
 
+entrypoint: python main.py
+
 docker:
-  image: python:3.7
+  image: python:3.10
 
 dependencies:
-  - django==1.2
-  - requests==2.19.0
+  - fastapi==0.95.0
+  - requests==2.31.0
 
 env:
-  AWS_ACCESS_KEY: "AKIA1234567890EXAMPLE"
-  AWS_SECRET_KEY: "mysecretkey123"
-  DB_PASSWORD: "rootpassword"
-  API_KEY: "12345-SECRET-KEY"
+  MODE: "production"
 
 permissions:
-  network: true 
-  filesystem: read-write
-  privileged: true
+  network: false
+  filesystem: read-only
+  privileged: false
+
+resources:
+  memory: "128m"
+  cpu: "0.5"
+
+security:
+  network: none
+  read_only: true
+  memory: "128m"
+  cpus: "0.5"
+  pids_limit: 50
+  no_new_privileges: true
