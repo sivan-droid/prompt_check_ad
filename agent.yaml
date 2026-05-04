@@ -1,10 +1,7 @@
 name: safe-agent
-version: 1.0.0
 description: Simple safe agent for execution testing
 
 runtime: python
-
-entrypoint: python main.py
 
 docker:
   image: python:3.10
